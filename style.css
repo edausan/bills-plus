@@ -1,32 +1,68 @@
+:root {
+  --bg: #f4f6f8;
+  --card: #ffffff;
+  --text: #111;
+  --muted: #666;
+  --accent: #4caf50;
+  --danger: #e53935;
+  --warn: #ff9800;
+}
+
+body.dark {
+  --bg: #121212;
+  --card: #1e1e1e;
+  --text: #f1f1f1;
+  --muted: #aaa;
+}
+
+* {
+  box-sizing: border-box;
+}
+
 body {
-  font-family: system-ui, sans-serif;
   margin: 0;
-  background: #f4f6f8;
+  font-family: system-ui, -apple-system, sans-serif;
+  background: var(--bg);
+  color: var(--text);
 }
 
 header {
-  background: #2c3e50;
-  color: white;
-  padding: 12px;
-  text-align: center;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px;
+  background: var(--card);
+  box-shadow: 0 2px 6px rgba(0,0,0,.08);
+}
+
+.tagline {
+  font-size: 12px;
+  color: var(--muted);
+}
+
+.icon-btn {
+  background: none;
+  border: none;
+  font-size: 20px;
 }
 
 nav {
   display: flex;
   gap: 6px;
-  padding: 8px;
-  background: #ddd;
+  padding: 10px;
 }
 
 nav button {
   flex: 1;
-  padding: 10px;
+  padding: 12px;
   border: none;
-  font-weight: bold;
+  border-radius: 10px;
+  background: var(--card);
+  font-weight: 600;
 }
 
 .tab {
-  padding: 12px;
+  padding: 14px;
 }
 
 .hidden {
@@ -35,23 +71,43 @@ nav button {
 
 input {
   width: 100%;
-  padding: 8px;
-  margin-bottom: 6px;
+  padding: 12px;
+  margin-bottom: 8px;
+  border-radius: 10px;
+  border: 1px solid #ccc;
 }
 
-button {
-  padding: 10px;
-  width: 100%;
+button.primary {
+  background: var(--accent);
+  color: white;
+  border: none;
+  padding: 14px;
+  border-radius: 12px;
+  font-size: 16px;
 }
 
 .bill-card {
-  background: white;
-  padding: 12px;
-  margin-bottom: 8px;
-  border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  background: var(--card);
+  padding: 14px;
+  border-radius: 14px;
+  margin-bottom: 10px;
+  box-shadow: 0 6px 12px rgba(0,0,0,.08);
 }
 
-.status-Unpaid { border-left: 6px solid orange; }
-.status-Paid { border-left: 6px solid green; }
-.status-Overdue { border-left: 6px solid red; }
+.status-Unpaid { border-left: 6px solid var(--warn); }
+.status-Paid { border-left: 6px solid var(--accent); }
+.status-Overdue { border-left: 6px solid var(--danger); }
+
+.summary {
+  background: linear-gradient(135deg, #4caf50, #66bb6a);
+  color: white;
+  padding: 16px;
+  border-radius: 16px;
+  margin-bottom: 14px;
+}
+
+footer {
+  text-align: center;
+  padding: 12px;
+  color: var(--muted);
+}
