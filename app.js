@@ -106,4 +106,33 @@ function renderHistory() {
   });
 }
 
+function requestNotificationPermission() {
+  if ("Notification" in window && Notification.permission !== "granted") {
+    Notification.requestPermission();
+  }
+}
+
+function checkDueNotifications() {
+  if (!("Notification" in window)) return;
+  if (Notification.permission !== "granted") return;
+
+  const today = new Date();
+  bills.forEach(b => {
+    if (b.status !== "Paid") {
+      const due = new Date(b.due);
+      const diff = Math.ceil((due - today) / (1000 * 60 * 60 * 24));
+
+      if (diff === 1 && !b.notified) {
+        new Notification("Bills+ Reminder", {
+          body: `${b.name} is due tomorrow (₱${b.amount})`,
+        });
+        b.notified = true;
+      }
+    }
+  });
+
+  save();
+}
+
+
 render();
