@@ -1,6 +1,6 @@
 {
-  "name": "Bills Tracker",
-  "short_name": "Bills",
+  "name": "Bills+",
+  "short_name": "Bills+",
   "start_url": "index.html",
   "display": "standalone",
   "background_color": "#ffffff",
