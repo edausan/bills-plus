@@ -139,9 +139,9 @@ function checkDueNotifications() {
 }
 
 let selectedMonth = new Date().toISOString().slice(0,7);
-const monthTabs = document.getElementById('monthTabs')
 
 function renderMonthTabs() {
+  const monthTabs = document.getElementById('monthTabs')
   const months = [...new Set(bills.map(b => b.month))];
   monthTabs.innerHTML = "";
 
