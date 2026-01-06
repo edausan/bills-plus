@@ -136,3 +136,6 @@ function checkDueNotifications() {
 
 
 render();
+requestNotificationPermission();
+checkDueNotifications();
+
