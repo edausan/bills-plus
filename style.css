@@ -1,0 +1,57 @@
+body {
+  font-family: system-ui, sans-serif;
+  margin: 0;
+  background: #f4f6f8;
+}
+
+header {
+  background: #2c3e50;
+  color: white;
+  padding: 12px;
+  text-align: center;
+}
+
+nav {
+  display: flex;
+  gap: 6px;
+  padding: 8px;
+  background: #ddd;
+}
+
+nav button {
+  flex: 1;
+  padding: 10px;
+  border: none;
+  font-weight: bold;
+}
+
+.tab {
+  padding: 12px;
+}
+
+.hidden {
+  display: none;
+}
+
+input {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 6px;
+}
+
+button {
+  padding: 10px;
+  width: 100%;
+}
+
+.bill-card {
+  background: white;
+  padding: 12px;
+  margin-bottom: 8px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.status-Unpaid { border-left: 6px solid orange; }
+.status-Paid { border-left: 6px solid green; }
+.status-Overdue { border-left: 6px solid red; }
