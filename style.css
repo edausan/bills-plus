@@ -111,3 +111,28 @@ footer {
   padding: 12px;
   color: var(--muted);
 }
+
+.month-tabs {
+  display: flex;
+  gap: 6px;
+  overflow-x: auto;
+  margin-bottom: 10px;
+}
+
+.month-tabs button {
+  padding: 8px 14px;
+  border-radius: 20px;
+  border: none;
+  background: var(--card);
+  font-weight: 600;
+}
+.month-tabs button.active {
+  background: var(--accent);
+  color: white;
+}
+
+button.danger {
+  background: var(--danger);
+  color: white;
+  margin-top: 10px;
+}

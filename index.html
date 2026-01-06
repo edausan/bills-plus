@@ -43,6 +43,7 @@
 
 <!-- BILLS -->
 <section id="bills" class="tab hidden">
+  <div id="monthTabs" class="month-tabs"></div>
   <div class="summary" id="summary"></div>
   <div id="billsContainer"></div>
 </section>
@@ -50,6 +51,8 @@
 <!-- HISTORY -->
 <section id="history" class="tab hidden">
   <h2>Payment History</h2>
+  <button class="danger" onclick="clearHistory()">Clear History</button>
+
   <ul id="historyList"></ul>
 </section>
 

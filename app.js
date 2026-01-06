@@ -29,7 +29,8 @@ function addBill() {
     amount: Number(billAmount.value),
     due: billDue.value,
     icon: billIcon.value || "💳",
-    status: "Unpaid"
+    status: "Unpaid",
+    month: billDue.value.slice(0,7) // YYYY-MM
   });
   save();
   render();
@@ -96,6 +97,9 @@ function renderBills() {
           <strong>${b.status}</strong>
         </div>`;
     });
+
+  const filtered = bills.filter(b => b.month === selectedMonth);
+
 }
 
 function renderHistory() {
@@ -133,6 +137,35 @@ function checkDueNotifications() {
 
   save();
 }
+
+let selectedMonth = new Date().toISOString().slice(0,7);
+const monthTabs = document.getElementById('monthTabs')
+
+function renderMonthTabs() {
+  const months = [...new Set(bills.map(b => b.month))];
+  monthTabs.innerHTML = "";
+
+  months.forEach(m => {
+    const btn = document.createElement("button");
+    btn.textContent = m;
+    if (m === selectedMonth) btn.classList.add("active");
+    btn.onclick = () => {
+      selectedMonth = m;
+      renderBills();
+    };
+    monthTabs.appendChild(btn);
+  });
+}
+
+function clearHistory() {
+  if (confirm("Clear payment history? This cannot be undone.")) {
+    history = [];
+    save();
+    render();
+  }
+}
+
+
 
 
 render();
