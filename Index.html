@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Bills Tracker</title>
+
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#2c3e50">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+  <h1>💸 Bills Tracker</h1>
+</header>
+
+<nav>
+  <button onclick="showTab('admin')">Admin</button>
+  <button onclick="showTab('bills')">Bills</button>
+  <button onclick="showTab('history')">History</button>
+</nav>
+
+<!-- ADMIN TAB -->
+<section id="admin" class="tab">
+  <h2>Add / Edit Bill</h2>
+
+  <input id="billName" placeholder="Bill Name">
+  <input id="billAmount" type="number" placeholder="Amount">
+  <input id="billDue" type="date">
+  <input id="billIcon" placeholder="Emoji Icon (💡)">
+  <button onclick="addBill()">Save Bill</button>
+
+  <ul id="adminList"></ul>
+</section>
+
+<!-- BILLS TAB -->
+<section id="bills" class="tab hidden">
+  <h2>My Bills</h2>
+  <div id="billsContainer"></div>
+</section>
+
+<!-- HISTORY TAB -->
+<section id="history" class="tab hidden">
+  <h2>Payment History</h2>
+  <ul id="historyList"></ul>
+</section>
+
+<script src="app.js"></script>
+</body>
+</html>
