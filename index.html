@@ -6,14 +6,18 @@
   <title>Bills+</title>
 
   <link rel="manifest" href="manifest.json">
-  <meta name="theme-color" content="#2c3e50">
+  <meta name="theme-color" content="#1e1e1e">
 
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
 <header>
-  <h1>💸 Bills+</h1>
+  <div>
+    <h1>💸 Bills+</h1>
+    <p class="tagline">Track • Pay • Stay Ahead</p>
+  </div>
+  <button class="icon-btn" onclick="toggleDark()">🌙</button>
 </header>
 
 <nav>
@@ -22,30 +26,36 @@
   <button onclick="showTab('history')">History</button>
 </nav>
 
-<!-- ADMIN TAB -->
+<!-- ADMIN -->
 <section id="admin" class="tab">
-  <h2>Add / Edit Bill</h2>
+  <h2>Add Bill</h2>
 
-  <input id="billName" placeholder="Bill Name">
+  <input id="billName" placeholder="Bill name">
   <input id="billAmount" type="number" placeholder="Amount">
   <input id="billDue" type="date">
-  <input id="billIcon" placeholder="Emoji Icon (💡)">
-  <button onclick="addBill()">Save Bill</button>
+  <input id="billIcon" placeholder="Emoji icon (💡)">
 
+  <button class="primary" onclick="addBill()">Save Bill</button>
+
+  <h3>Manage Bills</h3>
   <ul id="adminList"></ul>
 </section>
 
-<!-- BILLS TAB -->
+<!-- BILLS -->
 <section id="bills" class="tab hidden">
-  <h2>My Bills</h2>
+  <div class="summary" id="summary"></div>
   <div id="billsContainer"></div>
 </section>
 
-<!-- HISTORY TAB -->
+<!-- HISTORY -->
 <section id="history" class="tab hidden">
   <h2>Payment History</h2>
   <ul id="historyList"></ul>
 </section>
+
+<footer>
+  <small>Bills+ v1.1 • Offline Ready</small>
+</footer>
 
 <script src="app.js"></script>
 </body>
